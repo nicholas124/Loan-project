@@ -32,42 +32,52 @@ def show_explore_page():
         
         # load the charts using seaborn in the first column (left side)
         with cols[0]:
-            fig1 = plt.figure(figsize=(10, 5))
-            sns.histplot(df['LoanAmount'], bins = 20)
-            plt.title('Distribution of Loan amount', fontdict={'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
-            plt.xlabel('Load amount', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
-            plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
-            st.pyplot(fig1)
+            st.write("## Distribution of Loan Amount ##")
+            st.bar_chart(data=df['LoanAmount'] )
+            # fig1 = plt.figure(figsize=(10, 5))
+            # sns.histplot(df['LoanAmount'], bins = 20)
+            # plt.title('Distribution of Loan amount', fontdict={'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
+            # plt.xlabel('Load amount', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
+            # plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
+            # st.pyplot(fig1)
             
+
             
-            fig2 = plt.figure(figsize=(10, 5))
-            sns.barplot(mstatus.index, mstatus.values)
-            plt.title('Distribution of Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
-            plt.xlabel('Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
-            plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
-            st.pyplot(fig2)
+            st.write("## Distribution of Loan status ##")
+            st.bar_chart(data=mstatus )
+            
+            # fig2 = plt.figure(figsize=(10, 5))
+            # sns.barplot(mstatus.index, mstatus.values)
+            # plt.title('Distribution of Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
+            # plt.xlabel('Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
+            # plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
+            # st.pyplot(fig2)
             
         # load the charts using seaborn in the second column (right side)
         with cols[1]:
-
-            fig3 = plt.figure(figsize=(10, 5))
-            sns.barplot(gen.index, gen.values)
-            plt.title('Distribution of Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
-            plt.xlabel('Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
-            plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
-            st.pyplot(fig3)
             
-            fig4 = plt.figure(figsize=(10, 5))
-            plt.pie(property_area.values, shadow=True,labels=property_area.index, explode = (0.05, 0.05, 0.05),autopct = '%1.1f%%', startangle=30,)
-            plt.title('Property area distribution', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
-            plt.legend()
-            plt.legend(prop={'size':20})
-            plt.axis('equal')
-            st.pyplot(fig4)
+            st.write("## Distribution of Gender ##")
+            st.bar_chart(data=gen )
+
+            # fig3 = plt.figure(figsize=(10, 5))
+            # sns.barplot(gen.index, gen.values)
+            # plt.title('Distribution of Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
+            # plt.xlabel('Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
+            # plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
+            # st.pyplot(fig3)
+            
+            st.write("## Property area distribution ##")
+            st.bar_chart(data=property_area )
+            
+            # fig4 = plt.figure(figsize=(10, 5))
+            # plt.pie(property_area.values, shadow=True,labels=property_area.index, explode = (0.05, 0.05, 0.05),autopct = '%1.1f%%', startangle=30,)
+            # plt.title('Property area distribution', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
+            # plt.legend()
+            # plt.legend(prop={'size':20})
+            # plt.axis('equal')
+            # st.pyplot(fig4)
     
     # second tab to display the data
     with multivariate_tab:
 
-        fig6 = plt.figure(figsize=(10, 5))
-        sns.heatmap(df.corr(), annot = True)
-        st.pyplot(fig6)
+        st.dataframe(df)
