@@ -22,7 +22,7 @@ def show_explore_page():
     st.title("Dream Housing Home Loans Analysis")
     
     # create tabs to load the anaysis charts seprately
-    distribution_tab, multivariate_tab = st.tabs(["Distribution", "Multivariate Analysis"])
+    distribution_tab, multivariate_tab = st.tabs(["Distribution", "Raw Data"])
     
     #using the "with" display charts under this tab
     with distribution_tab:
@@ -32,8 +32,10 @@ def show_explore_page():
         
         # load the charts using seaborn in the first column (left side)
         with cols[0]:
+            
             st.write("## Distribution of Loan Amount ##")
-            st.bar_chart(data=df['LoanAmount'] )
+            st.line_chart(data=df['LoanAmount'] )
+            
             # fig1 = plt.figure(figsize=(10, 5))
             # sns.histplot(df['LoanAmount'], bins = 20)
             # plt.title('Distribution of Loan amount', fontdict={'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
