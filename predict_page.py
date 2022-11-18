@@ -26,7 +26,7 @@ le_Self_Employed = data["le_Self_Employed"]
 def show_predict_page():
     st.title("Loan Eligibility Prediction")
     
-    st.write(""" ### We need some information to predict the load  """)
+    st.write(""" ### We need some information to predict the loan  """)
     
     Gender = (
         "Male",
@@ -108,7 +108,7 @@ def show_predict_page():
             status = 'Eligable'
         else:
             status = 'Ineligible'
-        st.subheader(f"You are {status} for the loan {loan_eligebility}")
+        st.subheader(f"You are ** {status} ** for the loan")
     
     
     
