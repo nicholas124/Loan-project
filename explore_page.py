@@ -39,7 +39,7 @@ def show_explore_page():
             
             mstatus = df['Loan_Status'].value_counts()
             fig2 = plt.figure(figsize=(10, 5))
-            sns.barplot(mstatus.index, mstatus.values, palette='bright')
+            sns.barplot(mstatus.index, mstatus.values)
             plt.title('Distribution of Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
             plt.xlabel('Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
             plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 15})
@@ -50,7 +50,7 @@ def show_explore_page():
             gen = df['Gender'].value_counts()
 
             fig3 = plt.figure(figsize=(10, 5))
-            sns.barplot(gen.index, gen.values, palette='bright')
+            sns.barplot(gen.index, gen.values)
             plt.title('Distribution of Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
             plt.xlabel('Gender', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
             plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
