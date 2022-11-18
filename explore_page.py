@@ -33,7 +33,7 @@ def show_explore_page():
         # load the charts using seaborn in the first column (left side)
         with cols[0]:
             fig1 = plt.figure(figsize=(10, 5))
-            sns.distplot(df['LoanAmount'], bins = 20)
+            sns.histplot(df['LoanAmount'], bins = 20)
             plt.title('Distribution of Loan amount', fontdict={'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
             plt.xlabel('Load amount', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
             plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
