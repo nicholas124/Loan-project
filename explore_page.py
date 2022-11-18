@@ -10,6 +10,9 @@ def load_data():
 
 # call the method to load the data and assign it to dataframe
 df = load_data()
+mstatus = df['Loan_Status'].value_counts()
+gen = df['Gender'].value_counts()
+property_area = df['Property_Area'].value_counts()
 
 
 # method to show the explore page 
@@ -37,7 +40,6 @@ def show_explore_page():
             st.pyplot(fig1)
             
             
-            mstatus = df['Loan_Status'].value_counts()
             fig2 = plt.figure(figsize=(10, 5))
             sns.barplot(mstatus.index, mstatus.values)
             plt.title('Distribution of Loan status', fontdict = {'fontname' : 'Monospace', 'fontsize' : 20, 'fontweight' : 'bold'})
@@ -47,7 +49,6 @@ def show_explore_page():
             
         # load the charts using seaborn in the second column (right side)
         with cols[1]:
-            gen = df['Gender'].value_counts()
 
             fig3 = plt.figure(figsize=(10, 5))
             sns.barplot(gen.index, gen.values)
@@ -56,7 +57,6 @@ def show_explore_page():
             plt.ylabel('Number of people', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30})
             st.pyplot(fig3)
             
-            property_area = df['Property_Area'].value_counts()
             fig4 = plt.figure(figsize=(10, 5))
             plt.pie(property_area.values, shadow=True,labels=property_area.index, explode = (0.05, 0.05, 0.05),autopct = '%1.1f%%', startangle=30,)
             plt.title('Property area distribution', fontdict = {'fontname' : 'Monospace', 'fontsize' : 30, 'fontweight' : 'bold'})
