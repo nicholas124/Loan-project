@@ -79,7 +79,7 @@ def show_predict_page():
         loanamount = st.number_input('Loan Amount', 0, 50000)
         
     # action the button to start the prediction
-    ok = st.button("Predict Loan Eligibility")
+    ok = st.button("Classify Loan Eligibility")
     if ok:
         # convert the property area to number, since models dont accept string 
         if property_Area == 'Urban':
