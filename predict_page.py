@@ -26,7 +26,7 @@ le_Self_Employed = data["le_Self_Employed"]
 def show_predict_page():
     st.title("Loan Eligibility Prediction")
     
-    st.write(""" ### We need some information to predict the loan  """)
+    st.write(""" ### We need some information to predict the loan Eligibility """)
     
     Gender = (
         "Male",
