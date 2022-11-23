@@ -12,7 +12,7 @@ This project gives an insignt into the exploration, classification and stream li
 * Cool Blog post to give a brief explanation of what we did
 * And the code 
 
-
+![alt text](https://github.com/nicholas124/Loan-project/blob/master/loan-app.PNG?raw=true)
 
 # Conclusion
 This notebook was a good way for me to shapen my skills in the art of performing EDA and model training and implementation
